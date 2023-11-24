@@ -13,12 +13,17 @@ public class MailerService {
 
     public void postMail(){
 
-        System.out.println("from mail:   "+configProperties.getFromEmail());
+        try {
+            System.out.println("from mail:   " + configProperties.getFromEmail());
 
 
-        System.out.println("from mail:   "+configProperties.getPort());
-        System.out.println("from mail:   "+configProperties.getHostName());
-        log.info("from mail:   "+configProperties.getHostName());
+            System.out.println("from mail:   " + configProperties.getPort());
+            System.out.println("from mail:   " + configProperties.getHostName());
+            log.info("from mail:   " + configProperties.getHostName());
+
+        }catch (Exception exception){
+            log.error(exception.getMessage());
+        }
 
     }
 }
